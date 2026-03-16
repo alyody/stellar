@@ -2,89 +2,107 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Contact | Stellar Logistics">
-	<section class="min-h-[90vh] flex items-center pt-40 pb-20 px-6">
-		<div class="container mx-auto">
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
-				<!-- Content Side -->
-				<div class="flex flex-col justify-center">
-					<h1 class="text-xs font-bold uppercase tracking-[0.6em] text-crimson mb-8">Direct Access</h1>
-					<h2 class="text-5xl md:text-6xl text-navy leading-tight mb-8">
-						Initiate Your <br /><span class="italic text-slate-400">Strategic Inquiry</span>
-					</h2>
-					<p class="text-lg text-slate-600 mb-12 max-w-lg leading-relaxed">
-						Our logistics architects are ready to optimize your Middle East trade routes. Complete the form to receive a customized quote within 24 hours.
-					</p>
+<BaseLayout title="Contact Us | FS Me Logistics" description="Contact FS Me Logistics for elite trade management and regional logistics solutions.">
+	<section class="relative min-h-screen flex flex-col lg:flex-row">
+		<!-- Left Side: Visual / Info (Split Screen) -->
+		<div class="w-full lg:w-5/12 bg-navy relative flex flex-col justify-between p-12 lg:p-20 overflow-hidden">
+			<!-- Background Map Texture -->
+			<div class="absolute inset-0 opacity-10 grayscale brightness-50 z-0">
+				<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=100&w=1000')] bg-cover bg-center"></div>
+			</div>
+
+			<div class="relative z-10">
+				<h1 class="text-xs font-bold uppercase tracking-[0.6em] text-crimson mb-8">Direct Engagement</h1>
+				<h2 class="text-5xl lg:text-7xl text-white font-black leading-tight mb-12">
+					Let's Define <br /><span class="italic text-crimson">The Route.</span>
+				</h2>
+				
+				<div class="space-y-12 mt-20">
+					<div>
+						<h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Regional Headquarters</h4>
+						<p class="text-white text-lg font-medium leading-relaxed">
+							Stellar FZ / FS Me Logistics<br />
+							Regional Operations Hub<br />
+							Dubai, United Arab Emirates
+						</p>
+					</div>
 					
-					<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-						<div>
-							<h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Command Center</h4>
-							<p class="text-navy font-bold">Middle East / Persian Gulf Operations</p>
-						</div>
-						<div>
-							<h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Direct Channel</h4>
-							<p class="text-navy font-bold">ops@stellarlogistics.me</p>
+					<div>
+						<h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Direct Contact</h4>
+						<div class="space-y-2">
+							<a href="tel:+971561137851" class="text-white text-2xl font-black block hover:text-crimson transition-colors">+971 56 1137851</a>
+							<a href="mailto:ops@stellarfz.me" class="text-white/60 text-lg block hover:text-white transition-colors">ops@stellarfz.me</a>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- Form Side -->
-				<div class="glass-card p-10 md:p-12 relative">
-					<!-- Netlify Form Integration -->
-					<form name="quote-request" method="POST" data-netlify="true" class="space-y-6">
-						<!-- Required for Netlify Forms in AJAX/some static site generators -->
-						<input type="hidden" name="form-name" value="quote-request" />
-						
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-							<div>
-								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Company Name</label>
-								<input type="text" name="company" required class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" />
-							</div>
-							<div>
-								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Contact Name</label>
-								<input type="text" name="name" required class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" />
-							</div>
-						</div>
-						
-						<div>
-							<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Corporate Email</label>
-							<input type="email" name="email" required class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" />
-						</div>
-
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-							<div>
-								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Service Type</label>
-								<select name="service" class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all">
-									<option>Trade Route Management</option>
-									<option>EDI / Documentation</option>
-									<option>Regulatory Reporting</option>
-									<option>Other / Consulting</option>
-								</select>
-							</div>
-							<div>
-								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Trade Corridor</label>
-								<select name="corridor" class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all">
-									<option>CONUS - Middle East</option>
-									<option>Intra-Middle East</option>
-									<option>Persian Gulf / Red Sea</option>
-									<option>Other</option>
-								</select>
-							</div>
-						</div>
-
-						<div>
-							<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Project Details</label>
-							<textarea name="message" rows="4" class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" placeholder="Volume, frequency, specific requirements..."></textarea>
-						</div>
-
-						<button type="submit" class="w-full btn-primary py-4 text-sm tracking-[0.2em] font-black group flex items-center justify-center gap-3">
-							Submit Request
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-1">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-							</svg>
-						</button>
-					</form>
+			<div class="relative z-10 mt-20 lg:mt-0">
+				<div class="flex gap-4">
+					<div class="w-px h-12 bg-crimson"></div>
+					<p class="text-slate-400 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
+						Serving Middle East, <br />Red Sea & CONUS <br />Logistic Corridors.
+					</p>
 				</div>
+			</div>
+		</div>
+
+		<!-- Right Side: Premium Form -->
+		<div class="w-full lg:w-7/12 bg-white flex items-center justify-center p-12 lg:p-24">
+			<div class="w-full max-w-2xl">
+				<div class="mb-12">
+					<h3 class="text-3xl font-black text-navy uppercase tracking-tight mb-4">Request Operational Quote</h3>
+					<p class="text-slate-500 font-medium">Please provide your technical requirements and one of our dedicated account managers will contact you within 4 business hours.</p>
+				</div>
+
+				<form name="contact-main" method="POST" data-netlify="true" class="space-y-8">
+					<input type="hidden" name="form-name" value="contact-main" />
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div class="space-y-2">
+							<label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Full Name</label>
+							<input type="text" name="name" required placeholder="John DOE" class="w-full border-b border-slate-200 focus:border-navy text-navy font-bold py-4 px-0 transition-colors bg-transparent placeholder:text-slate-200 focus:ring-0 outline-none" />
+						</div>
+						<div class="space-y-2">
+							<label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Corporate Email</label>
+							<input type="email" name="email" required placeholder="j.doe@company.com" class="w-full border-b border-slate-200 focus:border-navy text-navy font-bold py-4 px-0 transition-colors bg-transparent placeholder:text-slate-200 focus:ring-0 outline-none" />
+						</div>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div class="space-y-2">
+							<label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Service Required</label>
+							<select name="service" class="w-full border-b border-slate-200 focus:border-navy text-navy font-bold py-4 px-0 transition-colors bg-transparent focus:ring-0 outline-none appearance-none">
+								<option value="trade-route">Trade Route Management</option>
+								<option value="reporting">Regulatory Reporting</option>
+								<option value="documentation">Commercial Documentation</option>
+								<option value="fleet">Fleet Operations</option>
+							</select>
+						</div>
+						<div class="space-y-2">
+							<label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Region of Interest</label>
+							<select name="region" class="w-full border-b border-slate-200 focus:border-navy text-navy font-bold py-4 px-0 transition-colors bg-transparent focus:ring-0 outline-none appearance-none">
+								<option value="middle-east">Middle East / Persian Gulf</option>
+								<option value="red-sea">Red Sea Corridor</option>
+								<option value="conus">CONUS Operations</option>
+								<option value="africa">North Africa / Sub-Sahara</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="space-y-2">
+						<label class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Project Specifics</label>
+						<textarea name="message" rows="4" placeholder="Briefly describe your logistics challenge..." class="w-full border-b border-slate-200 focus:border-navy text-navy font-bold py-4 px-0 transition-colors bg-transparent placeholder:text-slate-200 focus:ring-0 outline-none resize-none"></textarea>
+					</div>
+
+					<div class="pt-8">
+						<button type="submit" class="btn-primary w-full py-6 group">
+							Submit Operational Request
+							<span class="inline-block transition-transform group-hover:translate-x-2 ml-2">→</span>
+						</button>
+						<p class="mt-6 text-center text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Secure Submission • GDPR Compliant</p>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>

@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Track Shipment | FS Me Logistics" description="Live tracking for FS Me Logistics shipments. Access restricted to authorized personnel.">
+	<section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+		<!-- Map Background -->
+		<div class="absolute inset-0 z-0">
+			<div class="absolute inset-0 bg-navy/80 z-10"></div>
+			<!-- High-fidelity industrial map placeholder/styling -->
+			<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=100&w=2000')] bg-cover bg-center grayscale contrast-125 opacity-30"></div>
+		</div>
+
+		<div class="container mx-auto px-6 relative z-20">
+			<div class="max-w-3xl mx-auto text-center">
+				<h1 class="text-xs font-bold uppercase tracking-[0.6em] text-crimson mb-8">Asset Visibility</h1>
+				<h2 class="text-5xl md:text-7xl text-white leading-tight mb-12 font-black">
+					Secure Voyage <br /><span class="italic">Intelligence</span>
+				</h2>
+
+				<!-- Tracking Bar -->
+				<div class="glass-card p-2 flex flex-col md:flex-row gap-2 max-w-2xl mx-auto">
+					<input 
+						id="tracking-input"
+						type="text" 
+						placeholder="ENTER SHIPMENT OR CONTAINER ID (E.G. FS-123456)" 
+						class="flex-grow bg-transparent border-none text-white text-xs font-bold tracking-widest px-6 py-4 focus:ring-0 placeholder:text-slate-500 uppercase"
+					/>
+					<button 
+						id="track-btn"
+						class="btn-primary"
+					>
+						INITIALIZE TRACKING
+					</button>
+				</div>
+				<p class="mt-8 text-slate-400 text-xs font-bold tracking-widest uppercase opacity-60">
+					Encrypted 256-bit Secure Portal • Active Fleet Monitoring
+				</p>
+			</div>
+		</div>
+
+		<!-- Restricted Access Modal -->
+		<div id="restricted-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center px-6">
+			<div class="absolute inset-0 bg-navy/60 backdrop-blur-md"></div>
+			<div class="glass-card max-w-xl w-full p-12 text-center relative z-10 border-crimson/30 border-2">
+				<div class="w-20 h-20 bg-crimson/10 rounded-full flex items-center justify-center mx-auto mb-8">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-crimson" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m0 0v2m0-2h2m-2 0H10m12-3V7a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2z" />
+					</svg>
+				</div>
+				<h3 class="text-3xl text-white font-black mb-6 uppercase tracking-tight">Restricted Access</h3>
+				<p class="text-slate-300 text-lg leading-relaxed mb-10">
+					This portal is currently restricted to **authorized personnel** and active account holders only. Your access attempt has been logged for security audit purposes.
+				</p>
+				<div class="bg-navy/50 p-6 rounded-xl border border-white/10 mb-10 text-left">
+					<p class="text-xs text-slate-400 font-bold uppercase tracking-widest mb-2">Next Steps</p>
+					<p class="text-sm text-white">Please contact your dedicated FS Me Account Manager or regional operations center to request persistent access credentials.</p>
+				</div>
+				<button id="close-modal" class="btn-outline w-full border-white/20 text-white hover:bg-white/10">Return to Portal</button>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const trackBtn = document.getElementById('track-btn');
+		const modal = document.getElementById('restricted-modal');
+		const closeModal = document.getElementById('close-modal');
+		const input = document.getElementById('tracking-input');
+
+		trackBtn?.addEventListener('click', () => {
+			if (input.value.trim() !== '') {
+				modal?.classList.remove('hidden');
+			}
+		});
+
+		closeModal?.addEventListener('click', () => {
+			modal?.classList.add('hidden');
+		});
+
+		// Also trigger on enter key
+		input?.addEventListener('keypress', (e) => {
+			if (e.key === 'Enter' && input.value.trim() !== '') {
+				modal?.classList.remove('hidden');
+			}
+		});
+	</script>
+</BaseLayout>
