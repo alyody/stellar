@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | Stellar Logistics">
+	<section class="min-h-[90vh] flex items-center pt-40 pb-20 px-6">
+		<div class="container mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch">
+				<!-- Content Side -->
+				<div class="flex flex-col justify-center">
+					<h1 class="text-xs font-bold uppercase tracking-[0.6em] text-crimson mb-8">Direct Access</h1>
+					<h2 class="text-5xl md:text-6xl text-navy leading-tight mb-8">
+						Initiate Your <br /><span class="italic text-slate-400">Strategic Inquiry</span>
+					</h2>
+					<p class="text-lg text-slate-600 mb-12 max-w-lg leading-relaxed">
+						Our logistics architects are ready to optimize your Middle East trade routes. Complete the form to receive a customized quote within 24 hours.
+					</p>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+						<div>
+							<h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Command Center</h4>
+							<p class="text-navy font-bold">Middle East / Persian Gulf Operations</p>
+						</div>
+						<div>
+							<h4 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Direct Channel</h4>
+							<p class="text-navy font-bold">ops@stellarlogistics.me</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Form Side -->
+				<div class="glass-card p-10 md:p-12 relative">
+					<!-- Netlify Form Integration -->
+					<form name="quote-request" method="POST" data-netlify="true" class="space-y-6">
+						<!-- Required for Netlify Forms in AJAX/some static site generators -->
+						<input type="hidden" name="form-name" value="quote-request" />
+						
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<div>
+								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Company Name</label>
+								<input type="text" name="company" required class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" />
+							</div>
+							<div>
+								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Contact Name</label>
+								<input type="text" name="name" required class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" />
+							</div>
+						</div>
+						
+						<div>
+							<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Corporate Email</label>
+							<input type="email" name="email" required class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" />
+						</div>
+
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+							<div>
+								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Service Type</label>
+								<select name="service" class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all">
+									<option>Trade Route Management</option>
+									<option>EDI / Documentation</option>
+									<option>Regulatory Reporting</option>
+									<option>Other / Consulting</option>
+								</select>
+							</div>
+							<div>
+								<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Trade Corridor</label>
+								<select name="corridor" class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all">
+									<option>CONUS - Middle East</option>
+									<option>Intra-Middle East</option>
+									<option>Persian Gulf / Red Sea</option>
+									<option>Other</option>
+								</select>
+							</div>
+						</div>
+
+						<div>
+							<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Project Details</label>
+							<textarea name="message" rows="4" class="w-full bg-slate-50 border-slate-200 rounded-lg px-4 py-3 focus:ring-navy focus:border-navy text-sm font-medium transition-all" placeholder="Volume, frequency, specific requirements..."></textarea>
+						</div>
+
+						<button type="submit" class="w-full btn-primary py-4 text-sm tracking-[0.2em] font-black group flex items-center justify-center gap-3">
+							Submit Request
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 transition-transform group-hover:translate-x-1">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+							</svg>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

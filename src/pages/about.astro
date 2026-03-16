@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Stellar Logistics">
+	<section class="min-h-[60vh] flex items-center pt-32 pb-20 px-6 bg-slate-50 relative overflow-hidden">
+		<!-- Background Accents -->
+		<div class="absolute top-0 right-0 w-1/3 h-full bg-navy/[0.03] skew-x-[-20deg] transform translate-x-32"></div>
+		
+		<div class="container mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12">
+			<div class="max-w-3xl">
+				<h1 class="text-xs font-bold uppercase tracking-[0.6em] text-crimson mb-8">Established Excellence</h1>
+				<h2 class="text-5xl md:text-7xl text-navy leading-tight mb-12">
+					A Legacy of <br /><span class="italic">Regional Mastery</span>
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg text-slate-600 leading-relaxed font-medium">
+					<p>
+						Stellar Logistics was founded on the principle that the world's most complex trade routes require more than just shipping—they require elite-level management and deep regional intelligence.
+					</p>
+					<p>
+						From the Persian Gulf to the Red Sea, we navigate the intricacies of global commerce with a focus on regulatory precision and flawless execution for our CONUS partners.
+					</p>
+				</div>
+			</div>
+			
+			<div class="w-full lg:w-1/3 group">
+				<div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+					<img src="/vessel_animation.gif" alt="Liberty Global Vessel in Motion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
+					<div class="absolute inset-0 bg-navy/20"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-32 px-6">
+		<div class="container mx-auto">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+				<div class="lg:col-span-1">
+					<h3 class="text-3xl text-navy mb-6">Why Choose <br />Stellar Logistics?</h3>
+					<div class="w-20 h-1 bg-crimson"></div>
+				</div>
+				<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="p-8 border-l-4 border-navy hover:bg-slate-50 transition-colors">
+						<h4 class="font-bold text-navy mb-4 uppercase tracking-wider">24-Hour Operations</h4>
+						<p class="text-sm text-slate-500 leading-relaxed">
+							Our command centers operate around the clock, providing real-time support and EDI processing across all time zones.
+						</p>
+					</div>
+					<div class="p-8 border-l-4 border-navy hover:bg-slate-50 transition-colors">
+						<h4 class="font-bold text-navy mb-4 uppercase tracking-wider">Strategic Expertise</h4>
+						<p class="text-sm text-slate-500 leading-relaxed">
+							Decades of experience in Middle East maritime law and commercial documentation standards.
+						</p>
+					</div>
+					<div class="p-8 border-l-4 border-navy hover:bg-slate-50 transition-colors">
+						<h4 class="font-bold text-navy mb-4 uppercase tracking-wider">Regulatory Precision</h4>
+						<p class="text-sm text-slate-500 leading-relaxed">
+							100% compliance record in Middle East / Persian Gulf / Red Sea regulatory reporting and cargo monitoring.
+						</p>
+					</div>
+					<div class="p-8 border-l-4 border-navy hover:bg-slate-50 transition-colors">
+						<h4 class="font-bold text-navy mb-4 uppercase tracking-wider">Advanced Reporting</h4>
+						<p class="text-sm text-slate-500 leading-relaxed">
+							High-fidelity data integration and customized reporting for freight forwarders and government agents.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+const { title = "Stellar Logistics | Elite Trade & Management", description = "Elite trade route management and commercial documentation for Middle East logistics." } = Astro.props;
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- Header / Navigation -->
+		<header class="w-full fixed top-0 z-50 transition-all duration-300">
+			<!-- Top Bar (Liberty Global Style) -->
+			<div class="bg-navy text-white text-[11px] font-medium py-2 px-6 flex justify-between items-center uppercase tracking-widest border-b border-white/10">
+				<div>Global Reach. Regional Excellence.</div>
+				<div class="flex gap-4">
+					<a href="tel:+1234567890" class="hover:text-crimson">Support: +1 234 567 890</a>
+					<span>|</span>
+					<span>Middle East • Red Sea • CONUS</span>
+				</div>
+			</div>
+			
+			<!-- Main Nav -->
+			<nav class="bg-white/95 backdrop-blur-md shadow-md py-4 px-6 flex justify-between items-center h-[76px]">
+				<a href="/" class="flex items-center gap-2">
+					<div class="w-10 h-10 bg-navy flex items-center justify-center rounded-lg">
+						<span class="text-white font-bold text-xl uppercase italic">S</span>
+					</div>
+					<div class="flex flex-col">
+						<span class="text-navy font-black text-xl leading-none tracking-tight">STELLAR</span>
+						<span class="text-crimson font-bold text-[10px] tracking-[0.2em] uppercase leading-none mt-1">Logistics</span>
+					</div>
+				</a>
+				
+				<div class="hidden md:flex items-center gap-8 font-semibold text-sm text-navy uppercase tracking-wider">
+					<a href="/" class="hover:text-crimson transition-colors">Home</a>
+					<a href="/services" class="hover:text-crimson transition-colors">Services</a>
+					<a href="/about" class="hover:text-crimson transition-colors">About</a>
+					<a href="/track" class="hover:text-crimson transition-colors">Tracking</a>
+					<a href="/contact" class="btn-primary scale-90 py-2.5 px-6">Request Quote</a>
+				</div>
+				
+				<!-- Mobile Menu Toggle (Simplified) -->
+				<button class="md:hidden text-navy">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+					</svg>
+				</button>
+			</nav>
+		</header>
+
+		<main class="mt-[123px]">
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-navy text-white pt-20 pb-10 px-6 border-t border-white/5">
+			<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+				<div class="col-span-1 md:col-span-1">
+					<div class="flex items-center gap-2 mb-6">
+						<div class="w-8 h-8 bg-white/10 flex items-center justify-center rounded">
+							<span class="text-white font-bold text-lg italic">S</span>
+						</div>
+						<span class="text-white font-black text-lg tracking-tight">STELLAR</span>
+					</div>
+					<p class="text-slate-400 text-sm leading-relaxed mb-6">
+						Elite trade management and regulatory reporting for the world's most complex logistics corridors. Built for the next generation of global commerce.
+					</p>
+				</div>
+				
+				<div>
+					<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Operations</h4>
+					<ul class="space-y-4 text-sm text-slate-300">
+						<li><a href="/services" class="hover:text-crimson transition-colors">Trade Routes</a></li>
+						<li><a href="/services" class="hover:text-crimson transition-colors">Reporting</a></li>
+						<li><a href="/services" class="hover:text-crimson transition-colors">Documentation</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Company</h4>
+					<ul class="space-y-4 text-sm text-slate-300">
+						<li><a href="/about" class="hover:text-crimson transition-colors">About History</a></li>
+						<li><a href="/about" class="hover:text-crimson transition-colors">Regional Experts</a></li>
+						<li><a href="/careers" class="hover:text-crimson transition-colors">Careers</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">Compliance</h4>
+					<ul class="space-y-4 text-sm text-slate-300 text-[12px]">
+						<li>Regulatory Reporting</li>
+						<li>Trade Compliance</li>
+						<li>EDI Transactions</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest font-semibold gap-4">
+				<div>© 2026 Stellar FZ / Stellar Logistics. All rights reserved.</div>
+				<div class="flex gap-8">
+					<a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+					<a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
