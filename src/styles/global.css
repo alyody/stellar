@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #132c59;
+  --color-crimson: #c1272d;
+  
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
 
 @layer base {
   body {
