@@ -23,11 +23,11 @@
 }
 
 @utility btn-primary {
-  @apply btn-premium bg-crimson text-white hover:bg-red-700;
+  @apply px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg active:scale-95 bg-crimson text-white hover:bg-red-700;
 }
 
 @utility btn-outline {
-  @apply btn-premium border-2 border-navy text-navy hover:bg-navy hover:text-white;
+  @apply px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg active:scale-95 border-2 border-navy text-navy hover:bg-navy hover:text-white;
 }
 
 @utility glass-card {
